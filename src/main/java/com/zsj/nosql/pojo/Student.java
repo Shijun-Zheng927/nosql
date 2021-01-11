@@ -1,14 +1,35 @@
 package com.zsj.nosql.pojo;
 
 public class Student {
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    private Long sid;
     private String name;
     private String sex;
     private Integer age;
 
+    public Long getSid() {
+        return sid;
+    }
+
+    public void setSid(Long sid) {
+        this.sid = sid;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
+                "id='" + id + '\'' +
+                ", sid=" + sid +
+                ", name='" + name + '\'' +
                 ", sex='" + sex + '\'' +
                 ", age=" + age +
                 ", birthday='" + birthday + '\'' +

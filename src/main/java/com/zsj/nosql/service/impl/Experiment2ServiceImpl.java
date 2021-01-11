@@ -63,13 +63,17 @@ public class Experiment2ServiceImpl implements Experiment2Service {
         while (cursor.hasNext()) {
             Document d = cursor.next();
             String s = d.toJson();
+            System.out.println(s);
+            System.out.println(d.get("_id"));
             Student student = gson.fromJson(s, Student.class);
+            student.setId(d.get("_id").toString());
             String classname = d.get("class").toString();
             student.setClassname(Integer.parseInt(classname.substring(0, classname.indexOf("."))));
             System.out.println(student.toString());
             result.add(student);
         }
         return result;
+
     }
 
     @Override

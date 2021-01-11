@@ -31,7 +31,7 @@ public class MongoDB {
             // 链接到MongoDB服务器
             mongoClient = new MongoClient("localhost", 27017);
             // 链接MongoDB数据库
-            mgdb = mongoClient.getDatabase("test");
+            mgdb = mongoClient.getDatabase("user201800301014");
             System.out.println("----数据库连接成功----");
             System.out.println("当前的数据是 : " + mgdb.getName());
             // 如果MongoDB运行在安全模式需要添加如下认证.
@@ -86,7 +86,7 @@ public class MongoDB {
             MongoCollection<Document> collection = mgdb.getCollection(collectionName);
             collection.insertOne(new Document(map));
             System.out.println("\n"+"----插入一个文档----");
-            findAllDoc(collectionName);
+//            findAllDoc(collectionName);
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         }
@@ -120,7 +120,7 @@ public class MongoDB {
             MongoCollection<Document> collection = mgdb.getCollection(collectionName);
             UpdateResult result = collection.updateOne(query, new Document("$set",update));
             System.out.println("----更新查到的第一个文档-----");
-            findAllDoc(collectionName);
+//            findAllDoc(collectionName);
             System.out.println("更新的统计结果是："+result.toString());
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());

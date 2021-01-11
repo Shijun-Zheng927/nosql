@@ -1,6 +1,15 @@
 package com.zsj.nosql.pojo;
 
 public class Course {
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
     private Integer cid;
     private String name;
     private Integer fcid;
@@ -9,7 +18,8 @@ public class Course {
     @Override
     public String toString() {
         return "Course{" +
-                "cid=" + cid +
+                "id='" + id + '\'' +
+                ", cid=" + cid +
                 ", name='" + name + '\'' +
                 ", fcid=" + fcid +
                 ", credit=" + credit +

@@ -1,6 +1,15 @@
 package com.zsj.nosql.pojo;
 
 public class Teacher {
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
     private Integer tid;
     private String name;
     private String sex;
